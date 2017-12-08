@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Saved Articles</title>
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- custom stylesheet -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Karla|Unica+One" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container" id="nav">
+	<ul class="nav nav-pills">
+	  <li role="presentation" class="active"><a href="index.html">Home</a></li>
+	  <li role="presentation"><a href="index.html">Scrape Articles</a></li>
+	  <li role="presentation"><a href="saved.html">Saved Articles</a></li>
+	  <li role="presentation"><a id="launchModal" data-toggle="modal" data-target="#lpModal">The Olympian?</a></li>
+	  <li role="presentation"><a id="launchModal" data-toggle="modal" data-target="#scrapeModal">What is Scraping?</a></li>
+	</ul>
+</div>
+
+<div class="jumbotron">
+	<div class="container">
+		<div id="heading">
+
+		    <h1>Favorites</h1>
+	    </div>
+	</div>
+</div>
+
+<div class="container" id="savedArticles">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Saved Articles</h2>
+		</div>
+	</div>
+</div>
+
+	<div class="modal fade" id="lpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel"><h2>The Olympian?</h2></h4>
+	      </div>
+	      <div class="modal-body">
+	      <h3>The Olympian is a newspaper based in Olympia Washington. It's original purpose was to perserve the city's status as the Washington capital city. For now it remains a trusted source in print and online of news and information about the South Sound.</h3>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Cool, thanks!</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+<!-- scraping modal -->
+	<div class="modal fade" id="scrapeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel"><h2>What is Web Scraping?</h2></h4>
+	      </div>
+	      <div class="modal-body">
+	      <h3>Web Scraping (also termed Screen Scraping, Web Data Extraction, Web Harvesting etc) is a technique employed to extract large amounts of data from websites whereby the data is extracted and saved to a local file in your computer or to a database in table (spreadsheet) format.</h3>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Cool, thanks!</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+	
+</body>
+</html>
