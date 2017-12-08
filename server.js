@@ -25,9 +25,10 @@ app.use(bodyParser.urlencoded({
 
 // make public a static dir
 app.use(express.static("public"));
-
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrappy";
+var tempURI = "mongodb://heroku_0vmm96p8:asvcfubbgu4uf9q9n6udl95ivm@ds133876.mlab.com:33876/heroku_0vmm96p8";
 // database configuration with mongoose
-mongoose.connect("mongodb://heroku_0vmm96p8:asvcfubbgu4uf9q9n6udl95ivm@ds133876.mlab.com:33876/heroku_0vmm96p8");
+mongoose.connect(MONGODB_URI);
 var db = mongoose.connection;
 
 // show any mongoose errors
@@ -50,16 +51,14 @@ app.get("/", function(req, res) {
 // a get request to scrape the luckypeach website
 app.get("/scrape", function(req, res) {
 	// first, we grab the body of the html with request
-	request("https://www.luckypeach.com/features/", function(error, response, html) {
+	request("http://www.theolympian.com", function(error, response, html) {
 		// then, we load that into cheerio and save it to $ for shorthand
 		var $ = cheerio.load(html);
 		// now, we grab every h2 within an article tag and do the following:
 		// $(".entry-title").each(function(i, element) {
-		$("h2.archive-list--title").each(function(i, element) {
-			
+		$("h4.story-list").each(function(i, element) {
 			// save an empty result object
 			var result = {};
-			
 			// add the text and href of every link; save them as properties of the result object
 			// result.title = $(this.h2).children("a").text();
 			// result.link = $(this.h2).children("a").attr("href");
